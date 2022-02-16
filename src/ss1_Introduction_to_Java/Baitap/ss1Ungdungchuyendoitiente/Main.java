@@ -11,5 +11,6 @@ public class Main {
         usd=scanner.nextDouble();
         double convert=usd*23000;
         System.out.println("convert VND = "+convert);
+        
     }
 }
