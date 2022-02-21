@@ -4,20 +4,20 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        String[] students = {"Christian", "Michael", "Camila", "Sienna", "Tanya", "Connor", "Zachariah", "Mallory", "Zoe", "Emily"};
+        String[] students = {"Hải ở dưới","Trường trên dịch","Phương trên giàn","Khoa buffalo"};
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter a name’s student:");
-        String input_name = scanner.nextLine();
+        System.out.print("Nhập tên sinh viên: ");
+        String name = scanner.nextLine();
         boolean isExist = false;
         for (int i = 0; i < students.length; i++) {
-            if (students[i].equals(input_name)) {
-                System.out.println("Position of the students in the list " + input_name + " is: " + i);
+            if (students[i].equals(name)) {
+                System.out.println("Position of the students in the list " + name + " is: " + i);
                 isExist = true;
                 break;
             }
         }
         if (!isExist) {
-            System.out.println("Not found" + input_name + " in the list.");
+            System.out.println("Not found" + name + " in the list.");
         }
     }
 }
