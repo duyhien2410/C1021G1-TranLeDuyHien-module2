@@ -7,17 +7,14 @@ public class Circle {
 
         public Circle(){
         }
-        public Circle(double radius,String color){
+        public Circle(double radius){
             this.radius=radius;
-            this.color=color;
         }
 
         public double getRadius() {
             return this.radius;
         }
-        public String getColor(){
-            return this.color;
-        }
+
         public double getArea() {
             return Math.pow(radius,2)*Math.PI;
         }
