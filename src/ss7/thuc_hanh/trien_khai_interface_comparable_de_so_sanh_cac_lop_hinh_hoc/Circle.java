@@ -1,9 +1,7 @@
 package ss7.thuc_hanh.trien_khai_interface_comparable_de_so_sanh_cac_lop_hinh_hoc;
 
-public class Circle {
+public class Circle extends Shape{
     private double radius = 1.0;
-    private String color = "green";
-    private boolean filled = true;
 
     public Circle() {
     }
@@ -13,9 +11,8 @@ public class Circle {
     }
 
     public Circle(double radius, String color, boolean filled) {
+        super(color, filled);
         this.radius = radius;
-        this.color = color;
-        this.filled = filled;
     }
 
     public double getRadius() {
@@ -24,22 +21,6 @@ public class Circle {
 
     public void setRadius(double radius) {
         this.radius = radius;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public boolean isFilled() {
-        return filled;
-    }
-
-    public void setFilled(boolean filled) {
-        this.filled = filled;
     }
 
     public double getArea() {
@@ -53,10 +34,8 @@ public class Circle {
     @Override
     public String toString() {
         return "A Circle with radius="
-                + getRadius() +
-                "\n Area = "+
-                getArea()+
-                "\n Perimeter = "+
-                getPerimeter();
+                + getRadius()
+                + ", which is a subclass of "
+                + super.toString();
     }
 }
