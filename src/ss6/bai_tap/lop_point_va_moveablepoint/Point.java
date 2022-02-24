@@ -32,6 +32,7 @@ public class Point {
         this.x=x;
         this.y=y;
     }
+
     public float[] XY(){
         float[] arr={getX(),getY()};
         return arr;
