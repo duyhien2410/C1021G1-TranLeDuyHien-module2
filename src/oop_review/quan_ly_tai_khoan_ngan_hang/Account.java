@@ -4,7 +4,7 @@ public class Account {
     private long acNumber;
     private String acName;
     private double acBalance = 50;
-    public final double interestRate = 0.035;
+    public final double INTEREST_RATE = 0.035;
     public double topUp;
     public double withdrawals;
     public double transferAmount;
@@ -72,7 +72,7 @@ public class Account {
     }
 
     public double expire(){
-        return acBalance + acBalance*interestRate;
+        return acBalance + acBalance* INTEREST_RATE;
     }
 
     public double transfer(){

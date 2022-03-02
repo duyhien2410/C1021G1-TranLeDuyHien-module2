@@ -7,9 +7,9 @@ public class RunAccount {
         Scanner sc = new Scanner(System.in);
         Account account = new Account();
 
-        System.out.println("Nhập tên tài khoản: ");
+        System.out.print("Nhập tên tài khoản: ");
         account.setAcName(sc.nextLine());
-        System.out.println("Nhập số tài khoản: ");
+        System.out.print("Nhập số tài khoản: ");
         account.setAcNumber(sc.nextLong());
         System.out.println(account);
 
