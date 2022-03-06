@@ -1,17 +1,18 @@
-package oop_review.chuong_trinh_quan_ly_phuong_tien_giao_thong;
+package oop_review.chuong_trinh_quan_ly_phuong_tien_giao_thong.model;
 
-public abstract class VehicleManage {
+public class Vehicle {
     private String licensePlate;    //biển số xe
     private String manufacturer;    //hãng sản xuất
+    private String yearProduction;  //năm sản xuất
     private String owner;           //chủ sở hữu
-    Object[] vehicles;
 
-    public VehicleManage() {
+    public Vehicle() {
     }
 
-    public VehicleManage(String licensePlate, String manufacturer, String owner) {
+    public Vehicle(String licensePlate, String manufacturer, String yearProduction, String owner) {
         this.licensePlate = licensePlate;
         this.manufacturer = manufacturer;
+        this.yearProduction = yearProduction;
         this.owner = owner;
     }
 
@@ -31,6 +32,14 @@ public abstract class VehicleManage {
         this.manufacturer = manufacturer;
     }
 
+    public String getYearProduction() {
+        return yearProduction;
+    }
+
+    public void setYearProduction(String yearProduction) {
+        this.yearProduction = yearProduction;
+    }
+
     public String getOwner() {
         return owner;
     }
@@ -41,9 +50,10 @@ public abstract class VehicleManage {
 
     @Override
     public String toString() {
-        return "VehicleManage{" +
+        return "Vehicle{" +
                 "licensePlate='" + licensePlate + '\'' +
                 ", manufacturer='" + manufacturer + '\'' +
+                ", yearProduction='" + yearProduction + '\'' +
                 ", owner='" + owner + '\'' +
                 '}';
     }

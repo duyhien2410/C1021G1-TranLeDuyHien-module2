@@ -1,4 +1,4 @@
-package s11.thuc_hanh.trien_khai_use_lop_linkedlist;
+package ss11.thuc_hanh.trien_khai_use_lop_linkedlist;
 
 public class GenericStackClient {
     private static void stackOfIStrings() {
