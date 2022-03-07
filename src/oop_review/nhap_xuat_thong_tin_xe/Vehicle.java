@@ -1,15 +1,25 @@
 package oop_review.nhap_xuat_thong_tin_xe;
 
 public class Vehicle {
+    private String manufacturer;
     private double cubicCentimeters;
     private double vehicleValue;
 
     public Vehicle() {
     }
 
-    public Vehicle(double cubicCentimeters, double vehicleValue) {
+    public Vehicle(String manufacturer, double cubicCentimeters, double vehicleValue) {
+        this.manufacturer = manufacturer;
         this.cubicCentimeters = cubicCentimeters;
         this.vehicleValue = vehicleValue;
+    }
+
+    public String getManufacturer() {
+        return manufacturer;
+    }
+
+    public void setManufacturer(String manufacturer) {
+        this.manufacturer = manufacturer;
     }
 
     public double getCubicCentimeters() {
@@ -28,24 +38,24 @@ public class Vehicle {
         this.vehicleValue = vehicleValue;
     }
 
-    public double getTax(){
-        double taxMotorBike;
-        if (getCubicCentimeters()<=100){
-             taxMotorBike=getVehicleValue()*0.01;
-        } else if (getCubicCentimeters()<=200){
-                taxMotorBike=getVehicleValue()*6/100;
-        } else {
-            taxMotorBike=getVehicleValue()*3/100;
-        }
-        return taxMotorBike;
-    }
-
     @Override
     public String toString() {
         return "Vehicle{" +
-                "Dung tích xi lanh=" + cubicCentimeters +
-                ", Giá trị xe=" + vehicleValue +
-                ", Thuế xe=" + getTax()+
+                " manufacturer='" + manufacturer + '\'' +
+                ", cubicCentimeters=" + cubicCentimeters +
+                ", vehicleValue=" + vehicleValue +
                 '}';
+    }
+
+    public void tax() {
+        double taxMotorBike;
+        if (getCubicCentimeters() <= 100) {
+            taxMotorBike = getVehicleValue() * 0.01;
+        } else if (getCubicCentimeters() <= 200) {
+            taxMotorBike = getVehicleValue() * 0.06;
+        } else {
+            taxMotorBike = getVehicleValue() * 0.03;
+        }
+        System.out.println("Thuế của xe " + this.getManufacturer() + ": " + taxMotorBike);
     }
 }
