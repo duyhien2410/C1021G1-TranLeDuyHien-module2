@@ -12,7 +12,7 @@ public class Triangle {
         System.out.print("Nhập vào cạnh thứ ba của tam giác:");
         int edge3 = sc.nextInt();
 
-        if (edge1 + edge2 < edge3 || edge1 + edge3 < edge2 || edge2 + edge3 < edge1) {
+        if (edge1 + edge2 <= edge3 || edge1 + edge3 <= edge2 || edge2 + edge3 <= edge1) {
             throw new IllegalTriangleException("Tổng 2 cạnh không thể nhỏ hơn cạnh còn lại.");
         } else if (edge1 < 1 || edge2 < 1 || edge3 < 1) {
             throw new IllegalTriangleException("Cạnh hình tam giác không thể nhỏ hơn 1.");
