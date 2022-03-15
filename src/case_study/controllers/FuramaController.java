@@ -1,14 +1,17 @@
 package case_study.controllers;
 
+import case_study.services.impl.EmployeeServiceImpl;
+
 import java.util.Scanner;
 
 public class FuramaController {
     public void displayMainMenu(){
+        EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
         Scanner sc = new Scanner(System.in);
         boolean flag = true;
 
         do {
-            System.out.println("Menu:" +
+            System.out.println("Menu:\n" +
                     "1.\tEmployee Management\n" +
                     "2.\tCustomer Management\n" +
                     "3.\tFacility Management \n" +
@@ -19,13 +22,26 @@ public class FuramaController {
             int choose1 = Integer.parseInt(sc.nextLine());
             switch (choose1){
                 case 1:
-                    System.out.println("Employee Management: " +
+                    System.out.println("Employee Management: \n" +
                             "1.\tDisplay list employees\n" +
                             "2.\tAdd new employee\n" +
                             "3.\tEdit employee\n" +
                             "4.\tReturn main menu\n");
                     System.out.print("Input selection:");
                     int choose2 = Integer.parseInt(sc.nextLine());
+                    switch (choose2){
+                        case 1:
+                            employeeService.displayService();
+                            break;
+                        case 2:
+                            employeeService.addService();
+                            break;
+                        case 3:
+                            employeeService.editService();
+                            break;
+                        case 4:
+                            flag = true;
+                    }
                     break;
                 case 2:
                     System.out.println("Customer Management:" +
