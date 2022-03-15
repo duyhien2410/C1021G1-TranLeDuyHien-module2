@@ -1,21 +1,55 @@
 package case_study.models;
 
 public class Booking {
-    private String serviceName; //tên dịch vụ
-    private String useArea;     //diện tích sử dụng
-    private int cost;           //chi phí thuê
-    private int amountMax;      //số lượng người tối đa
-    private int rentType;       //kiểu thuê
+    private String bookingCode;
+    private String startDay;
+    private String endDay;
+    private String customerCode;
+    private String serviceName;
+    private String serviceType;
 
     public Booking() {
     }
 
-    public Booking(String serviceName, String useArea, int cost, int amountMax, int rentType) {
+    public Booking(String bookingCode, String startDay, String endDay, String customerCode, String serviceName, String serviceType) {
+        this.bookingCode = bookingCode;
+        this.startDay = startDay;
+        this.endDay = endDay;
+        this.customerCode = customerCode;
         this.serviceName = serviceName;
-        this.useArea = useArea;
-        this.cost = cost;
-        this.amountMax = amountMax;
-        this.rentType = rentType;
+        this.serviceType = serviceType;
+    }
+
+    public String getBookingCode() {
+        return bookingCode;
+    }
+
+    public void setBookingCode(String bookingCode) {
+        this.bookingCode = bookingCode;
+    }
+
+    public String getStartDay() {
+        return startDay;
+    }
+
+    public void setStartDay(String startDay) {
+        this.startDay = startDay;
+    }
+
+    public String getEndDay() {
+        return endDay;
+    }
+
+    public void setEndDay(String endDay) {
+        this.endDay = endDay;
+    }
+
+    public String getCustomerCode() {
+        return customerCode;
+    }
+
+    public void setCustomerCode(String customerCode) {
+        this.customerCode = customerCode;
     }
 
     public String getServiceName() {
@@ -26,46 +60,23 @@ public class Booking {
         this.serviceName = serviceName;
     }
 
-    public String getUseArea() {
-        return useArea;
+    public String getServiceType() {
+        return serviceType;
     }
 
-    public void setUseArea(String useArea) {
-        this.useArea = useArea;
-    }
-
-    public int getCost() {
-        return cost;
-    }
-
-    public void setCost(int cost) {
-        this.cost = cost;
-    }
-
-    public int getAmountMax() {
-        return amountMax;
-    }
-
-    public void setAmountMax(int amountMax) {
-        this.amountMax = amountMax;
-    }
-
-    public int getRentType() {
-        return rentType;
-    }
-
-    public void setRentType(int rentType) {
-        this.rentType = rentType;
+    public void setServiceType(String serviceType) {
+        this.serviceType = serviceType;
     }
 
     @Override
     public String toString() {
         return "Booking{" +
-                "serviceName='" + serviceName + '\'' +
-                ", useArea='" + useArea + '\'' +
-                ", cost=" + cost +
-                ", amountMax=" + amountMax +
-                ", rentType=" + rentType +
+                "bookingCode='" + bookingCode + '\'' +
+                ", startDay='" + startDay + '\'' +
+                ", endDay='" + endDay + '\'' +
+                ", customerCode='" + customerCode + '\'' +
+                ", serviceName='" + serviceName + '\'' +
+                ", serviceType='" + serviceType + '\'' +
                 '}';
     }
 }

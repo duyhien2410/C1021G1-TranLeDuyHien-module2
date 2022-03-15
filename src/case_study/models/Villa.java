@@ -1,8 +1,8 @@
-package case_study.services.impl;
+package case_study.models;
 
-import case_study.models.Booking;
+import case_study.models.Facility;
 
-public class Villa extends Booking {
+public class Villa extends Facility {
     private String roomStandard;
     private int poolArea;
     private int numberFloors;

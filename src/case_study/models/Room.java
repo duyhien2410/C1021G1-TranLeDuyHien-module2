@@ -1,8 +1,8 @@
-package case_study.services.impl;
+package case_study.models;
 
-import case_study.models.Booking;
+import case_study.models.Facility;
 
-public class Room extends Booking {
+public class Room extends Facility {
     private String serviceFree;
 
     public Room() {

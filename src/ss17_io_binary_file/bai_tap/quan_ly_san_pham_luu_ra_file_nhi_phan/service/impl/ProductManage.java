@@ -4,9 +4,6 @@ import ss17_io_binary_file.bai_tap.quan_ly_san_pham_luu_ra_file_nhi_phan.model.P
 import ss17_io_binary_file.bai_tap.quan_ly_san_pham_luu_ra_file_nhi_phan.service.Products;
 import ss17_io_binary_file.bai_tap.quan_ly_san_pham_luu_ra_file_nhi_phan.util.WriteAndReadFileProduct;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
