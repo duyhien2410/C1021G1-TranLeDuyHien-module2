@@ -46,11 +46,11 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public void editService() {
         displayService();
-        System.out.print("Nhập mã nhân viên mà bạn muốn sửa:");
-        String codeToEdit = sc.nextLine();
+        System.out.print("Input employee's code to edit:");
+        String employeeCodeEdit = sc.nextLine();
 
         for(int i = 0 ; i<employeeList.size(); i++){
-            if (codeToEdit.equals(employeeList.get(i).getCode())){
+            if (employeeCodeEdit.equals(employeeList.get(i).getCode())){
                 System.out.print("Enter again employee's name:");
                 String employeeName = sc.nextLine();
                 System.out.print("Enter again employee's birth day:");
