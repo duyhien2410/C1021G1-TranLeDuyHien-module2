@@ -7,7 +7,7 @@ import case_study.services.impl.FacilityServiceImpl;
 import java.util.Scanner;
 
 public class FuramaController {
-    public void displayMainMenu(){
+    public void displayMainMenu() {
         EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
         CustomerServiceImpl customerService = new CustomerServiceImpl();
         FacilityServiceImpl facilityService = new FacilityServiceImpl();
@@ -24,7 +24,7 @@ public class FuramaController {
                     "6.\tExit\n");
             System.out.print("Input selection:");
             int choose1 = Integer.parseInt(sc.nextLine());
-            switch (choose1){
+            switch (choose1) {
                 case 1:
                     System.out.println("Employee Management: \n" +
                             "1.\tDisplay list employees\n" +
@@ -33,7 +33,7 @@ public class FuramaController {
                             "4.\tReturn main menu\n");
                     System.out.print("Input selection:");
                     int choose2 = Integer.parseInt(sc.nextLine());
-                    switch (choose2){
+                    switch (choose2) {
                         case 1:
                             employeeService.displayService();
                             break;
@@ -55,7 +55,7 @@ public class FuramaController {
                             "4.\tReturn main menu\n");
                     System.out.print("Input selection:");
                     int choose3 = Integer.parseInt(sc.nextLine());
-                    switch (choose3){
+                    switch (choose3) {
                         case 1:
                             customerService.displayService();
                             break;
@@ -70,16 +70,65 @@ public class FuramaController {
                     }
                     break;
                 case 3:
-                    System.out.println("Facility Management: "+
-                            "1\tDisplay list facility\n" +
-                            "2\tAdd new facility\n" +
-                            "3\tDisplay list facility maintenance\n" +
-                            "4\tReturn main menu\n");
-                    System.out.println("Input selection:");
+                    System.out.println("Facility Management:\n" +
+                            "1.\tDisplay list facility\n" +
+                            "2.\tAdd new facility\n" +
+                            "3.\tDisplay list facility maintenance\n" +
+                            "4.\tReturn main menu\n");
+                    System.out.print("Input selection:");
                     int choose4 = Integer.parseInt(sc.nextLine());
+                    switch (choose4) {
+                        case 1:
+                            System.out.println("1.\tDisplay Villa\n" +
+                                    "2.\tDisplay House\n" +
+                                    "3.\tDisplay Room\n" +
+                                    "4.\tBack to menu\n");
+                            System.out.println("Input selection:");
+                            int choose4a = Integer.parseInt(sc.nextLine());
+                            switch (choose4a){
+                                case 1:
+                                    facilityService.displayVilla();
+                                    break;
+                                case 2:
+                                    facilityService.displayHouse();
+                                    break;
+                                case 3:
+                                    facilityService.displayRoom();
+                                    break;
+                                case 4:
+                                    flag = true;
+                            }
+                            break;
+                        case 2:
+                            System.out.println("1.\tAdd New Villa\n" +
+                                    "2.\tAdd New House\n" +
+                                    "3.\tAdd New Room\n" +
+                                    "4.\tBack to menu\n");
+                            System.out.print("Input selection:");
+                            int choose4b = Integer.parseInt(sc.nextLine());
+                            switch (choose4b) {
+                                case 1:
+                                    facilityService.addNewHouse();
+                                    break;
+                                case 2:
+                                    facilityService.addNewRoom();
+                                    break;
+                                case 3:
+                                    facilityService.addNewVilla();
+                                    break;
+                                case 4:
+                                    System.out.println("Error. Please input again.");
+                                    flag = true;
+                            }
+                            break;
+                        case 3:
+                            break;
+                        case 4:
+                            flag = true;
+                    }
                     break;
                 case 4:
-                    System.out.println("Facility Management:" +
+                    System.out.println("Booking Management:" +
                             "1.\tAdd new booking\n" +
                             "2.\tDisplay list booking\n" +
                             "3.\tCreate new constracts\n" +

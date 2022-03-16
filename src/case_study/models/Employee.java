@@ -8,8 +8,8 @@ public class Employee extends Person{
     public Employee() {
     }
 
-    public Employee(String code, String name, String birthDay, String sex, String identityCard, String phoneNumber, String email, String standard, String position, String wage) {
-        super(code, name, birthDay, sex, identityCard, phoneNumber, email);
+    public Employee(String code, String name, String birthDay, String genders, String identityCard, String phoneNumber, String email, String standard, String position, String wage) {
+        super(code, name, birthDay, genders, identityCard, phoneNumber, email);
         this.standard = standard;
         this.position = position;
         this.wage = wage;

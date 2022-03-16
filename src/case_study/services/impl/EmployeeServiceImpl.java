@@ -24,8 +24,8 @@ public class EmployeeServiceImpl implements EmployeeService {
         String employeeName = sc.nextLine();
         System.out.print("Enter employee's birth day:");
         String employeeBirthDay = sc.nextLine();
-        System.out.print("Enter employee's sex:");
-        String employeeSex = sc.nextLine();
+        System.out.print("Enter employee's genders:");
+        String employeeGenders = sc.nextLine();
         System.out.print("Enter employee's identity card:");
         String employeeIdentityCard = sc.nextLine();
         System.out.print("Enter employee's phone number:");
@@ -39,7 +39,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         System.out.print("Enter employee's wage:");
         String employeeWage = sc.nextLine();
 
-        Employee employee = new Employee(employeeCode, employeeName, employeeBirthDay, employeeSex, employeeIdentityCard, employeePhone, employeeEmail, employeeStandard, employeePosition, employeeWage);
+        Employee employee = new Employee(employeeCode, employeeName, employeeBirthDay, employeeGenders, employeeIdentityCard, employeePhone, employeeEmail, employeeStandard, employeePosition, employeeWage);
         employeeList.add(employee);
     }
 
@@ -55,8 +55,8 @@ public class EmployeeServiceImpl implements EmployeeService {
                 String employeeName = sc.nextLine();
                 System.out.print("Enter again employee's birth day:");
                 String employeeBirthDay = sc.nextLine();
-                System.out.print("Enter again employee's sex:");
-                String employeeSex = sc.nextLine();
+                System.out.print("Enter again employee's genders:");
+                String employeeGenders = sc.nextLine();
                 System.out.print("Enter again employee's identity card:");
                 String employeeIdentityCard = sc.nextLine();
                 System.out.print("Enter again employee's phone number:");
@@ -71,7 +71,7 @@ public class EmployeeServiceImpl implements EmployeeService {
                 String employeeWage = sc.nextLine();
                 employeeList.get(i).setName(employeeName);
                 employeeList.get(i).setBirthDay(employeeBirthDay);
-                employeeList.get(i).setSex(employeeSex);
+                employeeList.get(i).setGenders(employeeGenders);
                 employeeList.get(i).setIdentityCard(employeeIdentityCard);
                 employeeList.get(i).setPhoneNumber(employeePhone);
                 employeeList.get(i).setEmail(employeeEmail);

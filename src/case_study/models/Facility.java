@@ -1,21 +1,31 @@
 package case_study.models;
 
 public abstract class Facility {
+    private String serviceCode;
     private String serviceName; //tên dịch vụ
     private String useArea;     //diện tích sử dụng
     private int cost;           //chi phí thuê
-    private int amountMax;      //số lượng người tối đa
-    private int rentType;       //kiểu thuê
+    private int maximumQuantity;      //số lượng người tối đa
+    private String rentType;
 
     public Facility() {
     }
 
-    public Facility(String serviceName, String useArea, int cost, int amountMax, int rentType) {
+    public Facility(String serviceCode, String serviceName, String useArea, int cost, int amountMax, String rentType) {
+        this.serviceCode = serviceCode;
         this.serviceName = serviceName;
         this.useArea = useArea;
         this.cost = cost;
-        this.amountMax = amountMax;
+        this.maximumQuantity = amountMax;
         this.rentType = rentType;
+    }
+
+    public String getServiceCode() {
+        return serviceCode;
+    }
+
+    public void setServiceCode(String serviceCode) {
+        this.serviceCode = serviceCode;
     }
 
     public String getServiceName() {
@@ -42,30 +52,31 @@ public abstract class Facility {
         this.cost = cost;
     }
 
-    public int getAmountMax() {
-        return amountMax;
+    public int getMaximumQuantity() {
+        return maximumQuantity;
     }
 
-    public void setAmountMax(int amountMax) {
-        this.amountMax = amountMax;
+    public void setMaximumQuantity(int maximumQuantity) {
+        this.maximumQuantity = maximumQuantity;
     }
 
-    public int getRentType() {
+    public String getRentType() {
         return rentType;
     }
 
-    public void setRentType(int rentType) {
+    public void setRentType(String rentType) {
         this.rentType = rentType;
     }
 
     @Override
     public String toString() {
         return "Facility{" +
-                "serviceName='" + serviceName + '\'' +
+                "serviceCode='" + serviceCode + '\'' +
+                ", serviceName='" + serviceName + '\'' +
                 ", useArea='" + useArea + '\'' +
                 ", cost=" + cost +
-                ", amountMax=" + amountMax +
-                ", rentType=" + rentType +
+                ", maximumQuantity=" + maximumQuantity +
+                ", rentType='" + rentType + '\'' +
                 '}';
     }
 }

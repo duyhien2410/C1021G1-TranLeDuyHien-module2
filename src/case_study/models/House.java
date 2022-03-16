@@ -1,7 +1,5 @@
 package case_study.models;
 
-import case_study.models.Facility;
-
 public class House extends Facility {
     private String roomStandard;
     private int numberFloors;
@@ -9,8 +7,8 @@ public class House extends Facility {
     public House() {
     }
 
-    public House(String serviceName, String useArea, int cost, int amountMax, int rentType, String roomStandard, int numberFloors) {
-        super(serviceName, useArea, cost, amountMax, rentType);
+    public House(String serviceCode, String serviceName, String useArea, int cost, int maximumQuantity, String rentType, String roomStandard, int numberFloors) {
+        super(serviceCode, serviceName, useArea, cost, maximumQuantity, rentType);
         this.roomStandard = roomStandard;
         this.numberFloors = numberFloors;
     }
@@ -33,9 +31,9 @@ public class House extends Facility {
 
     @Override
     public String toString() {
-        return super.toString() +
-                "House{" +
-                "roomStandard='" + roomStandard + '\'' +
+        return "House{" +
+                super.toString() +
+                ", roomStandard='" + roomStandard + '\'' +
                 ", numberFloors=" + numberFloors +
                 '}';
     }

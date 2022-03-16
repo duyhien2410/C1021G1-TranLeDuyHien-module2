@@ -1,15 +1,13 @@
 package case_study.models;
 
-import case_study.models.Facility;
-
 public class Room extends Facility {
     private String serviceFree;
 
     public Room() {
     }
 
-    public Room(String serviceName, String useArea, int cost, int amountMax, int rentType, String serviceFree) {
-        super(serviceName, useArea, cost, amountMax, rentType);
+    public Room(String serviceCode, String serviceName, String useArea, int cost, int maximumQuantity, String rentType, String serviceFree) {
+        super(serviceCode, serviceName, useArea, cost, maximumQuantity, rentType);
         this.serviceFree = serviceFree;
     }
 
@@ -19,5 +17,13 @@ public class Room extends Facility {
 
     public void setServiceFree(String serviceFree) {
         this.serviceFree = serviceFree;
+    }
+
+    @Override
+    public String toString() {
+        return "Room{" +
+                super.toString() +
+                ", serviceFree='" + serviceFree + '\'' +
+                '}';
     }
 }

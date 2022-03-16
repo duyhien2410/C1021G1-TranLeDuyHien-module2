@@ -26,8 +26,8 @@ public class CustomerServiceImpl implements CustomerService {
         String customerName = sc.nextLine();
         System.out.print("Enter customer's birth day:");
         String customerBirthDay = sc.nextLine();
-        System.out.print("Enter customer's sex:");
-        String customerSex = sc.nextLine();
+        System.out.print("Enter customer's genders:");
+        String customerGenders = sc.nextLine();
         System.out.print("Enter customer's identity card:");
         String customerIdentityCard = sc.nextLine();
         System.out.print("Enter customer's phone number:");
@@ -39,7 +39,7 @@ public class CustomerServiceImpl implements CustomerService {
         System.out.println("Enter customer's address");
         String customerAddress = sc.nextLine();
 
-        Customer customer = new Customer(customerCode,customerName,customerBirthDay,customerSex,customerIdentityCard,customerPhone,customerEmail,customerType,customerAddress);
+        Customer customer = new Customer(customerCode,customerName,customerBirthDay,customerGenders,customerIdentityCard,customerPhone,customerEmail,customerType,customerAddress);
         customerList.add(customer);
 
     }
@@ -58,8 +58,8 @@ public class CustomerServiceImpl implements CustomerService {
                 String customerName = sc.nextLine();
                 System.out.print("Enter again customer's birth day:");
                 String customerBirthDay = sc.nextLine();
-                System.out.print("Enter again customer's sex:");
-                String customerSex = sc.nextLine();
+                System.out.print("Enter again customer's genders:");
+                String customerGenders = sc.nextLine();
                 System.out.print("Enter again customer's identity card:");
                 String customerIdentityCard = sc.nextLine();
                 System.out.print("Enter again customer's phone number:");
@@ -72,7 +72,7 @@ public class CustomerServiceImpl implements CustomerService {
                 String customerAddress = sc.nextLine();
                 customerList.get(i).setName(customerName);
                 customerList.get(i).setBirthDay(customerBirthDay);
-                customerList.get(i).setSex(customerSex);
+                customerList.get(i).setGenders(customerGenders);
                 customerList.get(i).setIdentityCard(customerIdentityCard);
                 customerList.get(i).setPhoneNumber(customerPhone);
                 customerList.get(i).setEmail(customerEmail);
