@@ -19,7 +19,7 @@ public class FuramaController {
                     "1.\tEmployee Management\n" +
                     "2.\tCustomer Management\n" +
                     "3.\tFacility Management \n" +
-                    "4.\tFacility Management\n" +
+                    "4.\tBooking Management\n" +
                     "5.\tPromotion Management\n" +
                     "6.\tExit\n");
             System.out.print("Input selection:");
@@ -102,6 +102,5 @@ public class FuramaController {
                     break;
             }
         } while (flag);
-
     }
 }
