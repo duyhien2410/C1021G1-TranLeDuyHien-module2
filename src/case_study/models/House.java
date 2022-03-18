@@ -2,12 +2,12 @@ package case_study.models;
 
 public class House extends Facility {
     private String roomStandard;
-    private int numberFloors;
+    private String numberFloors;
 
     public House() {
     }
 
-    public House(String serviceCode, String serviceName, String useArea, int cost, int maximumQuantity, String rentType, String roomStandard, int numberFloors) {
+    public House(String serviceCode, String serviceName, String useArea, String cost, String maximumQuantity, String rentType, String roomStandard, String numberFloors) {
         super(serviceCode, serviceName, useArea, cost, maximumQuantity, rentType);
         this.roomStandard = roomStandard;
         this.numberFloors = numberFloors;
@@ -21,11 +21,11 @@ public class House extends Facility {
         this.roomStandard = roomStandard;
     }
 
-    public int getNumberFloors() {
+    public String getNumberFloors() {
         return numberFloors;
     }
 
-    public void setNumberFloors(int numberFloors) {
+    public void setNumberFloors(String numberFloors) {
         this.numberFloors = numberFloors;
     }
 
@@ -36,5 +36,10 @@ public class House extends Facility {
                 ", roomStandard='" + roomStandard + '\'' +
                 ", numberFloors=" + numberFloors +
                 '}';
+    }
+
+    public  String getInfoHouseToCSV(){
+        return this.getServiceCode()+","+this.getServiceName()+","+this.getUseArea()+","+this.getCost()+"," +
+                ""+this.getMaximumQuantity()+","+this.getRentType()+","+this.getRoomStandard()+","+this.getNumberFloors();
     }
 }

@@ -6,7 +6,7 @@ public class Room extends Facility {
     public Room() {
     }
 
-    public Room(String serviceCode, String serviceName, String useArea, int cost, int maximumQuantity, String rentType, String serviceFree) {
+    public Room(String serviceCode, String serviceName, String useArea, String cost, String maximumQuantity, String rentType, String serviceFree) {
         super(serviceCode, serviceName, useArea, cost, maximumQuantity, rentType);
         this.serviceFree = serviceFree;
     }
@@ -25,5 +25,10 @@ public class Room extends Facility {
                 super.toString() +
                 ", serviceFree='" + serviceFree + '\'' +
                 '}';
+    }
+
+    public  String getInfoRoomToCSV(){
+        return this.getServiceCode()+","+this.getServiceName()+","+this.getUseArea()+","+this.getCost()+"," +
+                ""+this.getMaximumQuantity()+","+this.getRentType()+","+this.getServiceFree();
     }
 }

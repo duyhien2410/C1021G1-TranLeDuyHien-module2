@@ -2,6 +2,7 @@ package case_study.services.impl;
 
 import case_study.models.Employee;
 import case_study.services.EmployeeService;
+import case_study.utils.ReadAndWirteEmployee;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,12 +11,12 @@ import java.util.Scanner;
 public class EmployeeServiceImpl implements EmployeeService {
     private static List<Employee> employeeList = new ArrayList<>();
     static Scanner sc = new Scanner(System.in);
-    static {
-        employeeList.add(new Employee("1","Nguyễn Xuân Hải","24/10/1998","Nam","201354865","0955412548","abc@gmail.com","xyz","bds","1000000"));
-        employeeList.add(new Employee("2","Nguyễn Xuân Phúc","24/10/1998","Nam","201354865","0955412548","abc@gmail.com","xyz","bds","1000000"));
-        employeeList.add(new Employee("3","Nguyễn Xuân Sang","24/10/1998","Nam","201354865","0955412548","abc@gmail.com","xyz","bds","1000000"));
-
-    }
+//    static {
+//        employeeList.add(new Employee("1","Nguyễn Xuân Hải","24/10/1998","Nam","201354865","0955412548","abc@gmail.com","xyz","bds","1000000"));
+//        employeeList.add(new Employee("2","Nguyễn Xuân Phúc","24/10/1998","Nam","201354865","0955412548","abc@gmail.com","xyz","bds","1000000"));
+//        employeeList.add(new Employee("3","Nguyễn Xuân Sang","24/10/1998","Nam","201354865","0955412548","abc@gmail.com","xyz","bds","1000000"));
+//
+//    }
     @Override
     public void addService() {
         System.out.print("Enter employee's code:");
@@ -41,6 +42,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
         Employee employee = new Employee(employeeCode, employeeName, employeeBirthDay, employeeGenders, employeeIdentityCard, employeePhone, employeeEmail, employeeStandard, employeePosition, employeeWage);
         employeeList.add(employee);
+        ReadAndWirteEmployee.write(employeeList,true);
     }
 
     @Override
@@ -85,8 +87,10 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public void displayService() {
         System.out.println("-----List of employee-----");
-        for (Employee employee : employeeList) {
+        List<Employee> employeeList1 = ReadAndWirteEmployee.read();
+        for (Employee employee : employeeList1) {
             System.out.println(employee);
         }
+
     }
 }

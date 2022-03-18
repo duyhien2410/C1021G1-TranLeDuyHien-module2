@@ -11,6 +11,7 @@ public class RegexData {
                 check = false;
             } else {
                 System.out.println(error);
+                temp = sc.nextLine();
             }
         } while (check);
         return temp;

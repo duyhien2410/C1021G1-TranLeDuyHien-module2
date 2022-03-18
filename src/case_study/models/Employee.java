@@ -43,9 +43,13 @@ public class Employee extends Person{
     public String toString() {
         return "Employee{" +
                 super.toString() +
-                "standard='" + standard + '\'' +
+                ", standard='" + standard + '\'' +
                 ", position='" + position + '\'' +
                 ", wage='" + wage + '\'' +
                 '}';
+    }
+
+    public  String getInfoEmployToCSV(){
+        return this.getCode()+","+this.getName()+","+this.getBirthDay()+","+this.getGenders()+","+this.getIdentityCard()+","+this.getPhoneNumber()+","+this.getEmail()+","+this.getStandard()+","+this.getPosition()+","+this.getWage();
     }
 }

@@ -3,6 +3,7 @@ package case_study.services.impl;
 import case_study.models.Customer;
 import case_study.models.Employee;
 import case_study.services.CustomerService;
+import case_study.utils.ReadAndWriteCustomer;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -12,11 +13,11 @@ public class CustomerServiceImpl implements CustomerService {
     private static List<Customer> customerList = new LinkedList<>();
     static Scanner sc = new Scanner(System.in);
 
-    static {
-        customerList.add(new Customer("1","Quan Vân Trường","29/11/2000","Gay","201132475","0532475698","changtraitre2000@gmail.com","Diamond","Novotel, Sky36"));
-        customerList.add(new Customer("2","Quan Nhị Ca","29/11/2000","Gay","201132475","0532475698","changtraitre2000@gmail.com","Diamond","Novotel, Sky36"));
-        customerList.add(new Customer("3","Quan Vũ","29/11/2000","Gay","201132475","0532475698","changtraitre2000@gmail.com","Diamond","Novotel, Sky36"));
-    }
+//    static {
+//        customerList.add(new Customer("1","Quan Vân Trường","29/11/2000","Gay","201132475","0532475698","changtraitre2000@gmail.com","Diamond","Novotel, Sky36"));
+//        customerList.add(new Customer("2","Quan Nhị Ca","29/11/2000","Gay","201132475","0532475698","changtraitre2000@gmail.com","Diamond","Novotel, Sky36"));
+//        customerList.add(new Customer("3","Quan Vũ","29/11/2000","Gay","201132475","0532475698","changtraitre2000@gmail.com","Diamond","Novotel, Sky36"));
+//    }
 
     @Override
     public void addService() {
@@ -36,11 +37,12 @@ public class CustomerServiceImpl implements CustomerService {
         String customerEmail = sc.nextLine();
         System.out.print("Enter customer's type:");
         String customerType = sc.nextLine();
-        System.out.println("Enter customer's address");
+        System.out.print("Enter customer's address");
         String customerAddress = sc.nextLine();
 
         Customer customer = new Customer(customerCode,customerName,customerBirthDay,customerGenders,customerIdentityCard,customerPhone,customerEmail,customerType,customerAddress);
         customerList.add(customer);
+        ReadAndWriteCustomer.write(customerList,true);
 
     }
 
@@ -68,7 +70,7 @@ public class CustomerServiceImpl implements CustomerService {
                 String customerEmail = sc.nextLine();
                 System.out.print("Enter again customer's type:");
                 String customerType = sc.nextLine();
-                System.out.println("Enter again customer's address");
+                System.out.print("Enter again customer's address");
                 String customerAddress = sc.nextLine();
                 customerList.get(i).setName(customerName);
                 customerList.get(i).setBirthDay(customerBirthDay);
@@ -85,7 +87,8 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public void displayService() {
         System.out.println("-----List of customer-----");
-        for (Customer customer : customerList) {
+        List<Customer> customerList1 = ReadAndWriteCustomer.read();
+        for (Customer customer : customerList1) {
             System.out.println(customer);
         }
     }

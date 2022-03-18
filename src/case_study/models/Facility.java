@@ -4,19 +4,19 @@ public abstract class Facility {
     private String serviceCode;
     private String serviceName; //tên dịch vụ
     private String useArea;     //diện tích sử dụng
-    private int cost;           //chi phí thuê
-    private int maximumQuantity;      //số lượng người tối đa
+    private String cost;           //chi phí thuê
+    private String maximumQuantity;      //số lượng người tối đa
     private String rentType;
 
     public Facility() {
     }
 
-    public Facility(String serviceCode, String serviceName, String useArea, int cost, int amountMax, String rentType) {
+    public Facility(String serviceCode, String serviceName, String useArea, String cost, String maximumQuantity, String rentType) {
         this.serviceCode = serviceCode;
         this.serviceName = serviceName;
         this.useArea = useArea;
         this.cost = cost;
-        this.maximumQuantity = amountMax;
+        this.maximumQuantity = maximumQuantity;
         this.rentType = rentType;
     }
 
@@ -44,19 +44,19 @@ public abstract class Facility {
         this.useArea = useArea;
     }
 
-    public int getCost() {
+    public String getCost() {
         return cost;
     }
 
-    public void setCost(int cost) {
+    public void setCost(String cost) {
         this.cost = cost;
     }
 
-    public int getMaximumQuantity() {
+    public String getMaximumQuantity() {
         return maximumQuantity;
     }
 
-    public void setMaximumQuantity(int maximumQuantity) {
+    public void setMaximumQuantity(String maximumQuantity) {
         this.maximumQuantity = maximumQuantity;
     }
 
@@ -70,13 +70,11 @@ public abstract class Facility {
 
     @Override
     public String toString() {
-        return "Facility{" +
-                "serviceCode='" + serviceCode + '\'' +
+        return "serviceCode='" + serviceCode + '\'' +
                 ", serviceName='" + serviceName + '\'' +
                 ", useArea='" + useArea + '\'' +
                 ", cost=" + cost +
                 ", maximumQuantity=" + maximumQuantity +
-                ", rentType='" + rentType + '\'' +
-                '}';
+                ", rentType='" + rentType + '\'';
     }
 }

@@ -83,7 +83,7 @@ public class FuramaController {
                                     "2.\tDisplay House\n" +
                                     "3.\tDisplay Room\n" +
                                     "4.\tBack to menu\n");
-                            System.out.println("Input selection:");
+                            System.out.print("Input selection:");
                             int choose4a = Integer.parseInt(sc.nextLine());
                             switch (choose4a){
                                 case 1:
@@ -108,13 +108,13 @@ public class FuramaController {
                             int choose4b = Integer.parseInt(sc.nextLine());
                             switch (choose4b) {
                                 case 1:
-                                    facilityService.addNewHouse();
+                                    facilityService.addNewVilla();
                                     break;
                                 case 2:
-                                    facilityService.addNewRoom();
+                                    facilityService.addNewHouse();
                                     break;
                                 case 3:
-                                    facilityService.addNewVilla();
+                                    facilityService.addNewRoom();
                                     break;
                                 case 4:
                                     System.out.println("Error. Please input again.");
