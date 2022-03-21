@@ -1,7 +1,6 @@
 package case_study.services.impl;
 
 import case_study.models.Customer;
-import case_study.models.Employee;
 import case_study.services.CustomerService;
 import case_study.utils.ReadAndWriteCustomer;
 
@@ -37,25 +36,26 @@ public class CustomerServiceImpl implements CustomerService {
         String customerEmail = sc.nextLine();
         System.out.print("Enter customer's type:");
         String customerType = sc.nextLine();
-        System.out.print("Enter customer's address");
+        System.out.print("Enter customer's address:");
         String customerAddress = sc.nextLine();
 
         Customer customer = new Customer(customerCode,customerName,customerBirthDay,customerGenders,customerIdentityCard,customerPhone,customerEmail,customerType,customerAddress);
         customerList.add(customer);
         ReadAndWriteCustomer.write(customerList,true);
-
+        System.out.println("Added.");
     }
 
     @Override
     public void editService() {
         displayService();
-        System.out.print("Nhập mã nhân viên mà bạn muốn sửa:");
+        List<Customer> customerList3 = ReadAndWriteCustomer.read();
+        System.out.print("Enter service's code to edit:");
         String customerCodeEdit = sc.nextLine();
 
-        for(int i = 0 ; i<customerList.size(); i++){
-            if (customerCodeEdit.equals(customerList.get(i).getCode())){
-                System.out.print("Enter again customer's code:");
-                String customerCode = sc.nextLine();
+        for(int i = 0 ; i<customerList3.size(); i++){
+            if (customerCodeEdit.equals(customerList3.get(i).getCode())){
+//                System.out.print("Enter again customer's code:");
+//                String customerCode = sc.nextLine();
                 System.out.print("Enter again customer's name:");
                 String customerName = sc.nextLine();
                 System.out.print("Enter again customer's birth day:");
@@ -70,18 +70,36 @@ public class CustomerServiceImpl implements CustomerService {
                 String customerEmail = sc.nextLine();
                 System.out.print("Enter again customer's type:");
                 String customerType = sc.nextLine();
-                System.out.print("Enter again customer's address");
+                System.out.print("Enter again customer's address:");
                 String customerAddress = sc.nextLine();
-                customerList.get(i).setName(customerName);
-                customerList.get(i).setBirthDay(customerBirthDay);
-                customerList.get(i).setGenders(customerGenders);
-                customerList.get(i).setIdentityCard(customerIdentityCard);
-                customerList.get(i).setPhoneNumber(customerPhone);
-                customerList.get(i).setEmail(customerEmail);
-                customerList.get(i).setCustomerType(customerType);
-                customerList.get(i).setAddress(customerAddress);
+                customerList3.get(i).setName(customerName);
+                customerList3.get(i).setBirthDay(customerBirthDay);
+                customerList3.get(i).setGenders(customerGenders);
+                customerList3.get(i).setIdentityCard(customerIdentityCard);
+                customerList3.get(i).setPhoneNumber(customerPhone);
+                customerList3.get(i).setEmail(customerEmail);
+                customerList3.get(i).setCustomerType(customerType);
+                customerList3.get(i).setAddress(customerAddress);
+
+                ReadAndWriteCustomer.write(customerList3,false);
+                System.out.println("Edited.");
             }
         }
+    }
+
+    @Override
+    public void deleteService() {
+        displayService();
+        List<Customer> customerList2 = ReadAndWriteCustomer.read();
+        System.out.print("Enter service's code to delete:");
+        String serviceCodeDelete = sc.nextLine();
+        for(int i = 0 ; i < customerList2.size() ; i++){
+            if (serviceCodeDelete.equals(customerList2.get(i).getCode())){
+                customerList2.remove(i);
+                ReadAndWriteCustomer.write(customerList2,false);
+            }
+        }
+        System.out.println("Deleted");
     }
 
     @Override

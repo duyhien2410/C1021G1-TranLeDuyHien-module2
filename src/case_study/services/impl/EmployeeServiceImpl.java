@@ -43,16 +43,18 @@ public class EmployeeServiceImpl implements EmployeeService {
         Employee employee = new Employee(employeeCode, employeeName, employeeBirthDay, employeeGenders, employeeIdentityCard, employeePhone, employeeEmail, employeeStandard, employeePosition, employeeWage);
         employeeList.add(employee);
         ReadAndWirteEmployee.write(employeeList,true);
+        System.out.println("Added.");
     }
 
     @Override
     public void editService() {
         displayService();
+        List<Employee> employeeList3 = ReadAndWirteEmployee.read();
         System.out.print("Input employee's code to edit:");
         String employeeCodeEdit = sc.nextLine();
 
-        for(int i = 0 ; i<employeeList.size(); i++){
-            if (employeeCodeEdit.equals(employeeList.get(i).getCode())){
+        for(int i = 0 ; i<employeeList3.size(); i++){
+            if (employeeCodeEdit.equals(employeeList3.get(i).getCode())){
                 System.out.print("Enter again employee's name:");
                 String employeeName = sc.nextLine();
                 System.out.print("Enter again employee's birth day:");
@@ -71,17 +73,35 @@ public class EmployeeServiceImpl implements EmployeeService {
                 String employeePosition = sc.nextLine();
                 System.out.print("Enter again employee's wage:");
                 String employeeWage = sc.nextLine();
-                employeeList.get(i).setName(employeeName);
-                employeeList.get(i).setBirthDay(employeeBirthDay);
-                employeeList.get(i).setGenders(employeeGenders);
-                employeeList.get(i).setIdentityCard(employeeIdentityCard);
-                employeeList.get(i).setPhoneNumber(employeePhone);
-                employeeList.get(i).setEmail(employeeEmail);
-                employeeList.get(i).setStandard(employeeStandard);
-                employeeList.get(i).setPosition(employeePosition);
-                employeeList.get(i).setWage(employeeWage);
+                employeeList3.get(i).setName(employeeName);
+                employeeList3.get(i).setBirthDay(employeeBirthDay);
+                employeeList3.get(i).setGenders(employeeGenders);
+                employeeList3.get(i).setIdentityCard(employeeIdentityCard);
+                employeeList3.get(i).setPhoneNumber(employeePhone);
+                employeeList3.get(i).setEmail(employeeEmail);
+                employeeList3.get(i).setStandard(employeeStandard);
+                employeeList3.get(i).setPosition(employeePosition);
+                employeeList3.get(i).setWage(employeeWage);
+
+                ReadAndWirteEmployee.write(employeeList3,false);
+                System.out.println("Edited.");
             }
         }
+    }
+
+    @Override
+    public void deleteService() {
+        displayService();
+        List<Employee> employeeList2 = ReadAndWirteEmployee.read();
+        System.out.print("Enter service's code to delete:");
+        String serviceCodeDelete = sc.nextLine();
+        for(int i = 0 ; i < employeeList2.size() ; i++){
+            if (serviceCodeDelete.equals(employeeList2.get(i).getCode())){
+                employeeList2.remove(i);
+                ReadAndWirteEmployee.write(employeeList2,false);
+            }
+        }
+        System.out.println("Deleted");
     }
 
     @Override

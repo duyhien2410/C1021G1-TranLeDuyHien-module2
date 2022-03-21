@@ -36,6 +36,7 @@ public class House extends Facility {
                 ", roomStandard='" + roomStandard + '\'' +
                 ", numberFloors=" + numberFloors +
                 '}';
+
     }
 
     public  String getInfoHouseToCSV(){
